@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
@@ -9,6 +11,7 @@ public class RightBiggest {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		Stack<Integer> stack = new Stack<Integer>();
 		
 		int N = Integer.parseInt(br.readLine());
@@ -40,8 +43,10 @@ public class RightBiggest {
 		}
 		
 		for(int i = 0; i < N; i++) {
-			System.out.println(answer[i]);
+			bw.write(String.valueOf(answer[i]) + " ");
 		}
+		bw.flush();
+		bw.close();
 	}
 
 }
